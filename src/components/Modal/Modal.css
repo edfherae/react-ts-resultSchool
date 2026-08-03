@@ -1,0 +1,10 @@
+.modal {
+    margin: 10rem 1rem;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.modal::backdrop {
+    backdrop-filter: brightness(70%);
+}

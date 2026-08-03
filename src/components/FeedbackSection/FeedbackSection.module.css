@@ -1,0 +1,12 @@
+.text {
+    font-size: large;
+    margin: 0.25rem 0 0.5rem 0.5rem;
+}
+
+.input {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: 0 0 0.5rem 0.5rem;
+    border-radius: 5px;
+}

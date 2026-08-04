@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"; 
-import logo from "../assets/free-icon-graduation-2997322.png"
+import logo from "../../assets/free-icon-graduation-2997322.png"
 import { styled } from "styled-components"
+import "./Layout.css"
+
+import { Link, NavLink, Outlet } from "react-router"
+import CustomLink from "../CustomLink";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -10,7 +14,7 @@ const HeaderContainer = styled.header`
   height: 3rem;
 ` 
 
-export default function Header() {
+export default function Layout() {
   const [time, setTime] = useState(new Date());
   
   useEffect(() => {
@@ -28,7 +32,17 @@ export default function Header() {
           <h3 className="text-centered">Result university</h3>
         </div>
 
+        <Link to={"/"}>Home</Link>
+        <NavLink to={"/feedback"}>Feedback</NavLink> {/*Сам добавляет класс active*/}
+        <CustomLink to={"/effect"}>Effect</CustomLink> {/* Своё поведение */}
+
         <div className="text-centered">{time.toLocaleTimeString()}</div>
     </HeaderContainer>
+
+    <main className="container">
+      <Outlet /> {/* Сюда выгружаются страницы */}
+    </main>
+
+    <footer>2026</footer>
   </>
 }

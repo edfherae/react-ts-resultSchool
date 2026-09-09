@@ -1,0 +1,19 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { waysSlice } from "./slices/waysSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { differencesSlice } from "./slices/differencesSlice";
+
+const rootReducer = combineReducers({
+  [waysSlice.name]: waysSlice.reducer,
+  [differencesSlice.name]: differencesSlice.reducer,
+});
+
+export const store = configureStore({
+  reducer: rootReducer,
+});
+
+export type AppState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppSelector = useSelector.withTypes<AppState>();

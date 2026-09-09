@@ -29,7 +29,7 @@ export default function Layout() {
     <HeaderContainer>
         <div style={{display: "flex"}}>
           <img src={logo}></img>
-          <h3 className="text-centered">Result university</h3>
+          <h3 className="text-centered">Resul university</h3>
         </div>
 
         <Link to={"/"}>Home</Link>
